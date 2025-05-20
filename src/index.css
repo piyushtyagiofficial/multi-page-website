@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0f172a;
+  --color-secondary: #6366f1;
+  --color-accent: #f43f5e;
+  --color-text: #e2e8f0;
+  --color-text-light: #94a3b8;
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --cursor-size: 24px;
+}
+
+@layer base {
+  html {
+    font-family: 'Sora', sans-serif;
+    scroll-behavior: smooth;
+    cursor: none;
+  }
+  
+  body {
+    @apply bg-slate-900 text-slate-200 overflow-x-hidden;
+    cursor: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-full transition-all duration-200 ease-in-out;
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600 text-white hover:bg-indigo-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-indigo-600 text-indigo-600 hover:bg-indigo-600/10;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .nav-link {
+    @apply relative text-slate-300 hover:text-white transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-indigo-600 after:transition-all after:duration-300 hover:after:w-full;
+  }
+  
+  .nav-link.active {
+    @apply text-white after:w-full;
+  }
+  
+  .social-icon {
+    @apply text-slate-200 hover:text-white transition-colors;
+  }
+  .social-icon:hover {
+    @apply text-indigo-600;
+  }
+  .social-icon svg {
+    @apply w-6 h-6;
+  }
+  .social-icon:hover svg {
+    @apply text-indigo-600;
+  }
+  .social-icon:active svg {
+    @apply text-indigo-400;
+  }
+  .social-icon:focus svg {
+    @apply text-indigo-400;
+  }
+  .social-icon:focus-visible svg {
+    @apply text-indigo-400;
+  }
+  .social-icon:focus-visible {
+    @apply outline-none ring-2 ring-indigo-600 ring-offset-2;
+  }
+  .social-icon:focus {
+    @apply outline-none ring-2 ring-indigo-600 ring-offset-2;
+  }
+  .social-icon:active {
+    @apply outline-none ring-2 ring-indigo-600 ring-offset-2;
+  }
+}
